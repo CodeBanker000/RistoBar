@@ -1,0 +1,5 @@
+[DEBUG] 2018-feb-08 21:56:49 PM [JavaFX Application Thread] it.housework.AppManager - null
+[DEBUG] 2018-feb-08 22:04:41 PM [JavaFX Application Thread] it.housework.AppManager - null
+[INFO ] 2018-feb-09 18:25:19 PM [JavaFX Application Thread] it.housework.controllers.LoginController - L'utente logged in.
+[INFO ] 2018-feb-09 18:29:58 PM [JavaFX Application Thread] it.housework.controllers.LoginController - L'utente logged in.
+[INFO ] 2018-feb-12 17:41:03 PM [JavaFX Application Thread] it.housework.controllers.LoginController - L'utente logged in.
