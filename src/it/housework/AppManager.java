@@ -44,12 +44,11 @@ public class AppManager
      * Construct of the class
      * 
      * @param view     name of view
-     * @param flagPos  position of the caller method: true for the main
      */
-    public AppManager(String view, boolean flagPos)
+    public AppManager(String view)
     {
             this.loader = new FXMLLoader();
-            setViewLoader(view, flagPos);
+            setViewLoader(view);
             
             setLayout();
             
@@ -139,17 +138,12 @@ public class AppManager
      * passing the name of view and the position of the caller
      * 
      * @param viewName name of the view to call
-     * @param flagPos  is true is the caller is the main method
      */
-    private void setViewLoader(String viewName, boolean flagPos)
+    private void setViewLoader(String viewName)
     {
         String path;
         
-        if (flagPos) {
-            path = String.format("/it/housework/views/%s.fxml", viewName);
-        } else {
-            path = String.format("/it/housework/views/%s.fxml", viewName);
-        }
+        path = String.format("/it/housework/views/%s.fxml", viewName);
         
         this.loader.setLocation(getClass().getResource(path));
     }

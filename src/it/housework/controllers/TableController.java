@@ -5,6 +5,7 @@ package it.housework.controllers;
 
 import it.housework.AppManager;
 import it.housework.models.Model;
+import it.housework.models.Outlet;
 import java.io.IOException;
 
 /**
@@ -19,7 +20,8 @@ import javafx.scene.control.ComboBox;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class TableController extends Controller {
+public class TableController extends Controller 
+{
     
     private static final Logger log = LogManager.getLogger(HomeController.class);
 
@@ -28,7 +30,7 @@ public class TableController extends Controller {
     @FXML private Button btnLocals; 
     @FXML private Button btnOutlet; 
     @FXML private ComboBox<?> boxLocals;
-    @FXML private ComboBox<?> boxOutlet;
+    @FXML private ComboBox<Outlet> boxOutlet;
 
     @FXML
     void handleLocals(ActionEvent event) 
@@ -39,7 +41,7 @@ public class TableController extends Controller {
     @FXML
     void handleOutlet(ActionEvent event) throws IOException 
     {
-    	AppManager app = new AppManager("Outlet", false);
+    	AppManager app = new AppManager("Outlet");
         
         app.displayBox("Gestione Outlet", new Model());
     }
@@ -51,6 +53,11 @@ public class TableController extends Controller {
         assert boxLocals != null : "fx:id=\"boxLocals\" was not injected: check your FXML file 'Outlet.fxml'.";
         assert boxOutlet != null : "fx:id=\"boxOutlet\" was not injected: check your FXML file 'Outlet.fxml'.";
 
+    }
+    
+    public void fillBoxOutlet(Outlet list)
+    {
+        boxOutlet.getItems().addAll(list);
     }
     
     /**

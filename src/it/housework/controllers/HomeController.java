@@ -31,7 +31,7 @@ public class HomeController extends Controller {
     @FXML
     void handleOutlet(ActionEvent event) throws IOException 
     {
-        AppManager app = new AppManager("Table", false);
+        AppManager app = new AppManager("Table");
         
         app.display(event, "Gestione Tavoli", new Model());
     }

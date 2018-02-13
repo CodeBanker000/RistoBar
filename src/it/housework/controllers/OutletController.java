@@ -7,6 +7,7 @@ package it.housework.controllers;
  * Sample Skeleton for 'Outlet.fxml' Controller Class
  */
 
+import it.housework.models.Model;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -16,8 +17,11 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class OutletController {
-
+public class OutletController extends Controller 
+{
+    
+    Model model;
+    
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
 
@@ -74,5 +78,16 @@ public class OutletController {
         assert btnCreateOutlet != null : "fx:id=\"btnCreateOutlet\" was not injected: check your FXML file 'Outlet.fxml'.";
         assert btnHideOutlet != null : "fx:id=\"btnHideOutlet\" was not injected: check your FXML file 'Outlet.fxml'.";
 
+    }
+    
+    /**
+     * Set the model to the controller
+     * 
+     * @param model Object model passed to the controller
+     */
+    @Override
+    public void setModel(Model model) 
+    {
+        this.model = model;
     }
 }

@@ -20,7 +20,7 @@ public class RistoBar extends Application
     @Override
     public void start(Stage primaryStage) throws IOException
     {
-        AppManager app = new AppManager("Login", true);
+        AppManager app = new AppManager("Login");
         
         app.displayMainView(primaryStage, "Login", new Model());
     }

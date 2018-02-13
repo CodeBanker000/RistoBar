@@ -3,6 +3,7 @@
  */
 package it.housework.db;
 
+import it.housework.controllers.HomeController;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.housework.models.Outlet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Gives the CRUD method for the table outlet: create, retrieve, update and
@@ -24,10 +25,7 @@ import java.util.logging.Logger;
 public class OutletDAO
 {
     
-    /**
-     * Construct of the class, gives the connection 
-     */
-    public OutletDAO () {}
+    private static final Logger log = LogManager.getLogger(HomeController.class);
     
     /**
      * 
@@ -36,7 +34,7 @@ public class OutletDAO
      * @return
      * @throws SQLException 
      */
-    public int create(String outlet, boolean visible) throws SQLException
+    public static int create(String outlet, boolean visible) throws SQLException
     {
         Connection conn = DBconnect.getConnection();
         
@@ -54,13 +52,13 @@ public class OutletDAO
             conn.close();
 
         } catch(SQLException e) {
-            e.printStackTrace();
+            log.fatal(e);
         }
         
         return rs;
     }
     
-    public List<Outlet> read()
+    public static List<Outlet> read()
     {
         List<Outlet> list = new ArrayList<>();
         

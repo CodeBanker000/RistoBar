@@ -48,7 +48,7 @@ public class LoginController extends Controller {
         } else {
             log.info("L'utente logged in.");
             
-            AppManager app = new AppManager("Home", false);
+            AppManager app = new AppManager("Home");
             
             app.display(event, "Home", new Model());
             
